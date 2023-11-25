@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block header %}
+    <h2>Identifiers</h2>
+    <h3>{{ identifier.identifier_name }}</h3>
+    <h4>{% block title %}Delete{% endblock %}</h4>
+{% endblock %}
+
+{% block content %}
+    <form method="post">
+        <p>Are you sure you want to delete the identifier <strong>{{ identifier.identifier_name }}</strong>?</p>
+        <p><input type="hidden" name="identifier_id" value="{{ identifier.identifier_id }}"><input type="submit" value="Delete" class="btn btn-danger"></p>
+    </form>
+{% endblock %}

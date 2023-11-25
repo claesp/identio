@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block header %}
+    <h2>Identifiers</h2>
+    <h3>{{ identifier.identifier_name }}</h3>
+    <h4>{% block title %}Configuration{% endblock %}</h4>
+{% endblock %}
+
+{% block content %}
+    <form method="post">
+        <p><label for="cluster_name" class="form-label">Cluster Name</label><br><input name="cluster_name" id="cluster_name" class="form-control" value="{{ identifier.identifier_cluster_name }}" required></p>
+        <p><input type="submit" value="Update" class="btn btn-primary"></p>
+    </form>
+{% endblock %}

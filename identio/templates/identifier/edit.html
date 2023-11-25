@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block header %}
+    <h2>Identifiers</h2>
+    <h3>{{ identifier.identifier_name }}</h3>
+    <h4>{% block title %}Edit{% endblock %}</h4>
+{% endblock %}
+
+{% block content %}
+    <form method="post">
+        <p><label for="identifier_name" class="form-label">Name</label><br><input name="identifier_name" id="identifier_name" class="form-control" value="{{ identifier.identifier_name }}" required></p>
+        <p><label for="identifier_description" class="form-label">Description</label><br><textarea name="identifier_description" id="identifier_description" class="form-control" required>{{ identifier.identifier_description }}</textarea></p>
+        <p><input type="submit" value="Update" class="btn btn-primary"></p>
+    </form>
+{% endblock %}

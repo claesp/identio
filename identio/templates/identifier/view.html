@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block header %}
+    <h2>Identifiers</h2>
+    <h3>{% block title %}{{ identifier.identifier_name }}{% endblock %}</h3>
+    <h4>View</h4>
+{% endblock %}
+
+{% block content %}
+    <h5>{{ identifier.identifier_cluster_name }}</h5>
+    <p><a href="{{ url_for("cluster.create", id=identifier.identifier_id) }}">Add {{ identifier.identifier_cluster_name }}</a></p>
+{% endblock %}

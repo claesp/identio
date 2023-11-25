@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block header %}
+    <h2>Identifiers</h2>
+    <h3>{% block title %}All{% endblock %}</h3>
+{% endblock %}
+
+{% block content %}
+    <table class="table table-responsive table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Description</th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for identifier in identifiers %}
+            <tr>
+                <td><a href="{{ url_for("identifier.view", id=identifier.identifier_id) }}" title="View '{{ identifier.identifier_name }}'">{{ identifier.identifier_name }}</a></td>
+                <td>{{ identifier.identifier_description }}</td>
+                <td>
+                    <a href="{{ url_for("identifier.config", id=identifier.identifier_id) }}" title="Configure">C</a>
+                    <a href="{{ url_for("identifier.edit", id=identifier.identifier_id) }}" title="Edit">E</a>
+                    <a href="{{ url_for("identifier.delete", id=identifier.identifier_id) }}" title="Delete">D</a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

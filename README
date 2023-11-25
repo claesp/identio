@@ -1,0 +1,1 @@
+flask --app identio init-db
